@@ -1,0 +1,31 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   margin-top: 25px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+
+  h1{
+    color: #1F2B6C;font-size: 40px;
+  }
+}
+.desc{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+}
+.welcome{
+    color: #159EEC;
+    font-size: 20px;
+    font-weight: bold;
+}

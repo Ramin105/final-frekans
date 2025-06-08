@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+
+
+.headerOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 0;
+}
+.oneContainer{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+.logo{
+    h2{
+color: #1F2B6C;
+    }
+    span{
+       color: #159EEC
+    }
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.iconbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+.headerTwo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F2B6C;
+    width: 100%;
+    padding: 6px 0;
+}
+.twoContainer{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    button{
+        background-color: #BFD2D8;
+        color: #1F2B6C;
+        padding: 7px 35px;
+        border-radius: 20px;
+        border: none;
+    }
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.link{
+    color: white;
+    text-decoration: none;
+font-weight: 300;
+}

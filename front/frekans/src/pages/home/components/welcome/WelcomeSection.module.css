@@ -1,0 +1,36 @@
+.container{
+    background-image: url(../../../../assets/welcome.png);
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.textbox{
+    width: 70%;
+    display: flex;
+justify-content: start;
+align-items: center;
+}
+.text{
+    p{
+        color: #1BA0EC;
+    }
+    button{
+        background-color: #BFD2F8;
+        color: #1F2B6C;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+    }
+}
+.h1box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    font-size: 30px;
+    color: #1F2B6C;
+}

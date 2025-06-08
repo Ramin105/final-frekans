@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    button{
+        border: none;
+    }
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #1F2B6C;
+    padding: 10px 35px ;
+    p{
+        color: white;
+    }
+}
