@@ -1,22 +1,33 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt          from'jsonwebtoken';
+import asyncHandler from'express-async-handler';
+import User         from'../models/User.js';
 
-exports.protect = async (req, res, next) => {
+const protect = asyncHandler(async (req, res, next) => {
   let token;
   
-  if (req.headers.authorization?.startsWith('Bearer')) {
-    token = req.headers.authorization.split(' ')[1];
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    try {
+      // Token'ı al "Bearer token" formatından
+      token = req.headers.authorization.split(' ')[1];
+      
+      // Token'ı doğrula
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      
+      // Kullanıcıyı token'dan al (ID kullanarak)
+      req.user = await User.findById(decoded.id).select('-password');
+      
+      next();
+    } catch (error) {
+      console.error('Token doğrulama hatası:', error);
+      res.status(401);
+      throw new Error('Yetkilendirme başarısız, token geçersiz');
+    }
   }
   
   if (!token) {
-    return res.status(401).json({ message: 'Yetkilendirme reddedildi' });
+    res.status(401);
+    throw new Error('Yetkilendirme başarısız, token yok');
   }
-  
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id);
-    next();
-  } catch (err) {
-    res.status(401).json({ message: 'Geçersiz token' });
-  }
-};
+});
+
+export { protect };

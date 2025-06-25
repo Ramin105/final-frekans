@@ -1,11 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import axios from 'axios';
 
-import Router from './router/Router.jsx'
+// Axios global ayarları
+axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.withCredentials = true;
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Router />
-  </StrictMode>,
-)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+      <App />
+    
+  </React.StrictMode>
+);
